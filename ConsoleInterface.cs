@@ -13,6 +13,7 @@ public class ConsoleInterface
             Console.WriteLine("What do you wanna do today?\n");
             Console.WriteLine("1. Add new employee.");
             Console.WriteLine("2. Show employee list.");
+            Console.WriteLine("3. Quit!");
 
             int numberMenu = validation.CheckValidInputMenu();
 
@@ -39,6 +40,10 @@ public class ConsoleInterface
                     break;
                 case 2:
                     employee.ListEmployees();
+                    break;
+                case 3:
+                    Console.WriteLine("Goodbye!");
+                    Environment.Exit(0);
                     break;
             }
 
