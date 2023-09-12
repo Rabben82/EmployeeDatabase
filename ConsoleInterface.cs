@@ -2,8 +2,8 @@
 
 public class ConsoleInterface
 {
-    Validation validation = new Validation();
-    private Employee employee = new Employee();
+    readonly Validation validation = new Validation();
+    private readonly Employee employee = new Employee();
 
     public void StartConsole()
     {

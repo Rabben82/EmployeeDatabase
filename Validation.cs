@@ -2,6 +2,8 @@
 
 public class Validation
 {
+    private const int menuIndex = 3;
+    private const int maxWage = 300000;
     public string CheckIfStringIsValid(string userInput)
     {
         while (true)
@@ -31,7 +33,7 @@ public class Validation
         {
             string userInput = Console.ReadLine() ?? throw new InvalidOperationException();
 
-            if (!int.TryParse(userInput, out int numberMenu) || numberMenu is <= 0 or > 3)
+            if (!int.TryParse(userInput, out int numberMenu) || numberMenu is <= 0 or > menuIndex)
             {
                 Console.WriteLine("Invalid input, you need to input that's in the range of the menu.");
             }
@@ -48,7 +50,7 @@ public class Validation
         do
         {
 
-            if (!int.TryParse(userInput, out int numberWage) || numberWage <=0 || numberWage > 300000)
+            if (!int.TryParse(userInput, out int numberWage) || numberWage <=0 || numberWage > maxWage)
             {
                 Console.WriteLine("Invalid input, the wage cannot be 0 or moore than 300000kr");
                 userInput = Console.ReadLine() ?? throw new InvalidOperationException();
