@@ -3,7 +3,7 @@
 public class ConsoleInterface
 {
     readonly Validation validation = new Validation();
-    private readonly Employee employee = new Employee();
+    private readonly EmployeeManager employeeManager = new EmployeeManager();
 
     public void Start()
     {
@@ -34,12 +34,12 @@ public class ConsoleInterface
                     {
                         int wage = validation.CheckValidInputWage(userInput);
 
-                        if (nameValid != null) employee.AddEmployee(nameValid, wage);
+                        if (nameValid != null) employeeManager.AddEmployee(nameValid, wage);
                     }
 
                     break;
                 case 2:
-                    employee.ListEmployees();
+                    employeeManager.ListEmployees();
                     break;
                 case 3:
                     Console.WriteLine("Goodbye!");
