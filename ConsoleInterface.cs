@@ -23,20 +23,15 @@ public class ConsoleInterface
                     Console.Clear();
 
                     Console.Write("What is the employees name?: ");
-                    string name = Console.ReadLine() ?? throw new InvalidOperationException();
+                    string name = Console.ReadLine() ?? throw new InvalidOperationException("value can't be null");
 
                     string nameValid = validation.CheckIfStringIsValid(name);
-
                     Console.Write("What is the employees wage?: ");
-                    string userInput = Console.ReadLine() ?? throw new InvalidOperationException();
 
-                    if (userInput != null)
-                    {
-                        int wage = validation.CheckValidInputWage(userInput);
+                    string userInput = Console.ReadLine() ?? throw new InvalidOperationException("value can't be null");
+                    int wage = validation.CheckValidInputWage(userInput);
 
-                        if (nameValid != null) employeeManager.AddEmployee(nameValid, wage);
-                    }
-
+                    employeeManager.AddEmployee(nameValid, wage);
                     break;
                 case 2:
                     employeeManager.ListEmployees();
