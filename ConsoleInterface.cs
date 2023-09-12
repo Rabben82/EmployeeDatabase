@@ -5,7 +5,7 @@ public class ConsoleInterface
     readonly Validation validation = new Validation();
     private readonly Employee employee = new Employee();
 
-    public void StartConsole()
+    public void Start()
     {
         do
         {

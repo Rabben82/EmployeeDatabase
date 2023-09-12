@@ -9,7 +9,7 @@ namespace EmployeeDatabase
         {
             ConsoleInterface consoleInterface = new ConsoleInterface();
 
-            consoleInterface.StartConsole();
+            consoleInterface.Start();
         }
     }
 }
