@@ -24,6 +24,8 @@ public class ConsoleInterface
                     Console.Write("What is the employees name?: ");
                     string name = Console.ReadLine() ?? throw new InvalidOperationException();
 
+                    string nameValid = validation.CheckIfStringIsValid(name);
+
                     Console.Write("What is the employees wage?: ");
                     string userInput = Console.ReadLine() ?? throw new InvalidOperationException();
 
@@ -31,7 +33,7 @@ public class ConsoleInterface
                     {
                         int wage = validation.CheckValidInputWage(userInput);
 
-                        if (name != null) employee.AddEmployee(name, wage);
+                        if (nameValid != null) employee.AddEmployee(nameValid, wage);
                     }
 
                     break;

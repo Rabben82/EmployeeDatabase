@@ -2,6 +2,29 @@
 
 public class Validation
 {
+    public string CheckIfStringIsValid(string userInput)
+    {
+        while (true)
+        {
+            if (string.IsNullOrWhiteSpace(userInput))
+            {
+                Console.WriteLine("Input can't be null or whitespace, enter a valid name");
+                userInput = Console.ReadLine() ?? throw new InvalidOperationException();
+            }
+            else if(int.TryParse(userInput, out int number))
+            {
+                Console.WriteLine("A number is not a valid name, enter a valid name with letters a-z ");
+                userInput = Console.ReadLine() ?? throw new InvalidOperationException();
+            }
+            else
+            {
+                return userInput;
+            }
+
+        }
+        
+    }
+
     public int CheckValidInputMenu()
     {
         do
