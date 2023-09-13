@@ -11,12 +11,12 @@ public class Validation
             if (string.IsNullOrWhiteSpace(userInput))
             {
                 Console.WriteLine("Input can't be null or whitespace, enter a valid name");
-                userInput = Console.ReadLine() ?? throw new InvalidOperationException("value can't be null");
+                userInput = Console.ReadLine() ?? throw new InvalidOperationException("Value can't be null");
             }
             else if(int.TryParse(userInput, out int number))
             {
                 Console.WriteLine("A number is not a valid name, enter a valid name with letters a-z ");
-                userInput = Console.ReadLine() ?? throw new InvalidOperationException("value can't be null");
+                userInput = Console.ReadLine() ?? throw new InvalidOperationException("Value can't be null");
             }
             else
             {
@@ -29,7 +29,7 @@ public class Validation
     {
         do
         {
-            string userInput = Console.ReadLine() ?? throw new InvalidOperationException();
+            string userInput = Console.ReadLine() ?? throw new InvalidOperationException("Value can't be null");
 
             if (!int.TryParse(userInput, out int numberMenu) || numberMenu is <= 0 or > menuIndex)
             {

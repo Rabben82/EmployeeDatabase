@@ -7,8 +7,9 @@ public class Employee
     public string Name { get; set; }
     public int Wage { get; set; }
 
-    public Employee()
+    public Employee(string name, int wage)
     {
-        Name = string.Empty;
+        Name = name;
+        Wage = wage;
     }
 }

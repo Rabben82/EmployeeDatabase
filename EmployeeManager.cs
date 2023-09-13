@@ -6,16 +6,9 @@ public class EmployeeManager
     public void AddEmployee(string name, int wage)
     {
 
-        Employee employee = new Employee
-        {
-            Name = name,
-            Wage = wage
+        employeeList.Add(new Employee(name, wage));
 
-        };
-
-        employeeList.Add(employee);
-
-        Console.WriteLine($"You have added {employee.Name} to the list.");
+        Console.WriteLine($"You have added {name} to the list.");
         Console.WriteLine("Push any key to continue.");
         Console.ReadKey();
     }
@@ -25,10 +18,18 @@ public class EmployeeManager
         Console.Clear();
         Console.WriteLine("This is the employee list!\n");
 
-        foreach (var employee in employeeList)
+        if (employeeList.Count == 0)
         {
-            index++;
-            Console.WriteLine($"{index}. Employee: {employee.Name}, Wage: {employee.Wage}");
+            Console.WriteLine("You haven't added any employees");
+        }
+        else
+        {
+            foreach (var employee in employeeList)
+            {
+                index++;
+                Console.WriteLine($"{index}. Employee: {employee.Name}, Wage: {employee.Wage}");
+            }
+
         }
 
         Console.WriteLine("\nPush any key to continue");
