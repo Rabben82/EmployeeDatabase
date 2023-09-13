@@ -16,9 +16,7 @@ public class ConsoleInterface
             switch (numberMenu)
             {
                 case 1:
-                    string nameValid = validation.CheckIfStringIsValid("What is the employees name?:");
-                    int wage = validation.CheckValidInputWage("What is the employees wage?: ");
-                    employeeManager.AddEmployee(nameValid, wage);
+                    AddEmployee();
                     break;
                 case 2:
                     employeeManager.ListEmployees();
@@ -38,6 +36,12 @@ public class ConsoleInterface
         Console.WriteLine("1. Add new employee.");
         Console.WriteLine("2. Show employee list.");
         Console.WriteLine("3. Quit!");
+    }
+    private void AddEmployee()
+    {
+        string nameValid = validation.CheckIfStringIsValid("What is the employees name?:");
+        int wage = validation.CheckValidInputWage("What is the employees wage?: ");
+        employeeManager.AddEmployee(nameValid, wage);
     }
 
     private void Exit()
