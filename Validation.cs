@@ -4,8 +4,13 @@ public class Validation
 {
     private const int menuIndex = 3;
     private const int maxWage = 300000;
-    public string CheckIfStringIsValid(string userInput)
+    public string CheckIfStringIsValid(string prompt)
     {
+        Console.Clear();
+        Console.Write(prompt);
+
+        string userInput = Console.ReadLine() ?? throw new InvalidOperationException("Value can't be null");
+
         while (true)
         {
             if (string.IsNullOrWhiteSpace(userInput))
@@ -43,8 +48,11 @@ public class Validation
         } while (true);
     }
 
-    public int CheckValidInputWage(string userInput)
+    public int CheckValidInputWage( string prompt)
     {
+        Console.Write(prompt);
+        string userInput = Console.ReadLine() ?? throw new InvalidOperationException("Value can't be null");
+
         do
         {
 
